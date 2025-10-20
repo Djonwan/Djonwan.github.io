@@ -6,6 +6,62 @@ hamburger.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
+
+// Animation des skills au scroll
+function animateSkills() {
+    const skillItems = document.querySelectorAll('.skill-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progress = entry.target.querySelector('.skill-progress');
+                const width = progress.getAttribute('data-width');
+                
+                setTimeout(() => {
+                    progress.style.width = width + '%';
+                }, 300);
+                
+                // Animation du pourcentage
+                const percent = entry.target.querySelector('.skill-percent');
+                let start = 0;
+                const end = parseInt(width);
+                const duration = 1500;
+                const stepTime = Math.abs(Math.floor(duration / end));
+                
+                const timer = setInterval(() => {
+                    start++;
+                    percent.textContent = start + '%';
+                    
+                    if (start === end) {
+                        clearInterval(timer);
+                        percent.textContent = end + '%';
+                    }
+                }, stepTime);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    skillItems.forEach(item => observer.observe(item));
+}
+
+// Lancer l'animation quand la page charge
+document.addEventListener('DOMContentLoaded', animateSkills);
+
+// Smooth scroll pour la navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+
 // Gestion des liens de navigation
 const navLinks = document.querySelectorAll("nav ul li a");
 navLinks.forEach((link) => {
