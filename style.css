@@ -711,40 +711,6 @@ img[data-fallback] {
     animation: float 6s infinite ease-in-out;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    #skills h2 {
-        font-size: 36px;
-    }
-    
-    .skills-category h3 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    #skills {
-        padding: 80px 20px;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .skill-item {
-        padding: 25px 20px;
-    }
-    
-    .skill-item i {
-        font-size: 40px;
-    }
-}
 
 /* ANIMATIONS */
 @keyframes fadeInUp {
@@ -1891,10 +1857,29 @@ footer {
     max-width: 80%;
   }
 
+  
+
+
   #skills {
-    padding: 60px 20px;
-    max-width: 100%;
+    padding: 80px 20px;
   }
+    
+  .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+    
+  .skill-item {
+      padding: 25px 20px;
+  }
+    
+  .skill-item i {
+      font-size: 40px;
+  }
+
+
+
+  
 
   #skills h2 {
     font-size: 28px;
