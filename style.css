@@ -227,7 +227,7 @@ nav ul li a::after {
 }
 
 .home-content h1 {
-  font-size: 56px;
+  font-size: 65px;
   font-weight: 700;
   color: #333;
   line-height: 1.2;
@@ -284,13 +284,18 @@ nav ul li a::after {
 }
 
 .home-image {
-  max-width: 45%;
+  max-width: 32%;
   animation: fadeIn 1s ease-out 0.2s;
   animation-fill-mode: both;
   z-index: 3;
 }
 
-.home-image img,
+
+.home-image img {
+  width: 100%;
+  height: auto;
+}
+
 .about-image img,
 .work-card img,
 .testimonial-card img {
@@ -307,6 +312,18 @@ nav ul li a::after {
   object-fit: cover;
   margin: 0 auto 15px;
 }
+
+/* UNIQUEMENT pour .home-image */
+.home-image img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  min-height: 300px; /* Hauteur minimale pour votre image */
+}
+
 
 img[data-fallback] {
   background: #e0e0e0;
@@ -456,7 +473,7 @@ img[data-fallback] {
 }
 
 .about-content p {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   color: #555;
   line-height: 1.6;
@@ -465,7 +482,7 @@ img[data-fallback] {
 
 .about-content ul {
   list-style: none;
-  font-size: 18px;
+  font-size: 20px;
   color: #555;
 }
 
@@ -486,7 +503,7 @@ img[data-fallback] {
 }
 
 .about-image {
-  max-width: 40%;
+  max-width: 35%;
   animation: fadeIn 1s ease-out 0.2s;
   animation-fill-mode: both;
   z-index: 3;
@@ -1144,7 +1161,7 @@ img[data-fallback] {
 }
 .social-icons a {
   font-size: 1.5rem;
-  color: #333;
+  color: #555;
   transition: color 0.3s ease;
 }
 .social-icons a:hover {
@@ -1308,7 +1325,7 @@ footer {
 
 .social-icons a {
   font-size: 20px;
-  color: #ccc;
+  color: #555;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
